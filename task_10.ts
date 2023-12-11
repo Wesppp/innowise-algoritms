@@ -1,7 +1,11 @@
-// Каррирование (не сделал)
+// Каррирование
 
-// function add(num: number) {
-//
-// }
-//
-// console.log(add(4)(3)(1));
+function add(a: number) {
+    return function(b: number) {
+        return function (c: number) {
+            return a + b + c;
+        }
+    }
+}
+
+console.log(add(4)(3)(1));
