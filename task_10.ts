@@ -1,11 +1,15 @@
 // Каррирование
 
-function add(a: number) {
-    return function(b: number) {
-        return function (c: number) {
-            return a + b + c;
-        }
+function add(n: number) {
+    function innerAdd(nextValue: number) {
+        return add(n + nextValue);
     }
+
+    innerAdd.valueOf = function() {
+        return n;
+    };
+
+    return innerAdd;
 }
 
-console.log(add(4)(3)(1));
+add(1)(2)(3);
