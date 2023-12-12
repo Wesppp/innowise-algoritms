@@ -4,7 +4,7 @@
 function getMiddle(str: string): string {
     const middle: number = Math.floor(str.length / 2);
 
-    return str.length % 2 === 0 ? `${str[middle - 1]}${str[middle]}` : `${str[middle]}`;
+    return !(str.length % 2) ? `${str[middle - 1]}${str[middle]}` : `${str[middle]}`;
 }
 
 console.log(getMiddle('test'));

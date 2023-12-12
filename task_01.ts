@@ -3,7 +3,7 @@
 // Если хотя бы один раз колбек-функция вернула true, то any возвращает true
 // Иначе - false
 
-function any(arr: number[], cb?: (x: any) => boolean): boolean {
+function any(arr: number[], cb: (x: number) => boolean = x => x > 2): boolean {
     return cb ? arr.some(cb) : arr.some((el) => el);
 }
 

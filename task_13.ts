@@ -2,7 +2,7 @@
 // ищет в нём элементы между a и b и отдаёт массив этих элементов.
 
 function filterRange(arr: number[], a: number, b: number): number[] {
-    return arr.reduce((acc, el) => el > a && el < b ? acc.push(el) : acc, []);
+    return arr.filter((el) => el > a && el < b);
 }
 
 let arr = [5, 3, 8, 1];

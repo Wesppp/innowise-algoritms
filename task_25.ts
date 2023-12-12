@@ -5,20 +5,12 @@
 // По тупому сделал)
 
 function unReg(str: string): number {
-    const exceptions: string[] = [];
-
     return str.toLowerCase()
         .split('')
         .reduce(
-            (acc, el, i, arr) => {
-                if(i !== arr.lastIndexOf(el) && !exceptions.includes(el)) {
-                    exceptions.push(el);
-
-                    return acc += 1;
-                }
-
-                return acc
-            }, 0);
+            (acc, el, i, arr) =>
+                i !== arr.lastIndexOf(el) && !acc.includes(el) ? acc.push(el) : acc
+            , []).length;
 }
 
 console.log(unReg('Indivisibilities'));

@@ -6,7 +6,7 @@ function divisors(num: number): number[] | string {
     const result: number[] = [];
 
     for(let i = 2; i < num; i++) {
-        if (num % i === 0) { result.push(i); }
+        if (!(num % i)) { result.push(i); }
     }
 
     return result.length ? result : `${num} is prime`;
